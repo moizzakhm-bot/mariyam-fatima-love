@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Mariyam Fatima 💜 | Hugs, Kisses & Sweet Treats</title>
+  <title>For Mariyam Fatima 💜 | My Baby, My Bubb, My Boo Boo</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,20 +12,29 @@
   
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-purple-theme">
   <!-- Ambient floating particles canvas -->
   <canvas id="ambient-canvas"></canvas>
 
   <!-- Audio Toggle Bar -->
   <div class="audio-toggle-container">
-    <button id="music-btn" class="cute-pill-btn" title="Toggle cozy music-box melody">
-      <span class="btn-icon">🎵</span>
-      <span id="music-btn-text">Play Cozy Lullaby</span>
+    <button id="music-btn" class="cute-pill-btn music-active" title="Play 'we fell in love in october' (My Girl)">
+      <span class="btn-icon">🍂</span>
+      <span id="music-btn-text">Play: We Fell in Love in October</span>
     </button>
     <button id="sound-btn" class="cute-pill-btn" title="Toggle Sound FX">
       <span class="btn-icon">🔊</span>
       <span id="sound-btn-text">Sound: ON</span>
     </button>
+  </div>
+
+  <!-- Music Lyrics Floating Bar -->
+  <div class="lyrics-ticker-banner" id="lyrics-banner">
+    <div class="ticker-content">
+      <span class="music-note-icon">🎵</span>
+      <span id="lyrics-text">"My girl, my girl, my girl... you will be my girl 🍂💜"</span>
+      <span class="song-tag">we fell in love in october • girl in red</span>
+    </div>
   </div>
 
   <main class="page-wrapper">
@@ -34,7 +43,7 @@
     <header class="hero-section">
       <div class="hero-badge">
         <span class="sparkle-icon">✨</span>
-        A Special Little Universe Just For You
+        For My Baby • My Bubb • My Boo Boo
         <span class="sparkle-icon">✨</span>
       </div>
 
@@ -45,56 +54,55 @@
       </h1>
 
       <p class="hero-subtitle">
-        Filled with infinite hugs, sweet warm kisses, cute fluffy kittens, 
-        and all your favorite desserts! 🍰🍦✨
+        You will always be my girl, my world, and my baby. Filled with infinite warm hugs, sweet kisses, cute fluffy kittens, and all your favorite purple desserts, bubb! 🍰🍦✨
       </p>
 
       <!-- Main Interactive Kitten Mascot -->
       <div class="mascot-stage">
         <div class="cloud-platform"></div>
         <div class="kitten-container" id="hero-kitten" title="Click or tap to pet me!">
-          <div class="kitten-bubble" id="kitten-speech">Purrrr! Welcome, Mariyam! 💜</div>
+          <div class="kitten-bubble" id="kitten-speech">Purrrr! Welcome my baby bubb Mariyam! You're my cutest boo boo 💜</div>
           <svg class="kawaii-kitten" viewBox="0 0 200 200">
             <!-- Ears -->
-            <polygon points="45,60 20,10 75,35" fill="#C4B5FD"/>
+            <polygon points="45,60 20,10 75,35" fill="#7C3AED"/>
             <polygon points="50,55 32,25 70,40" fill="#F472B6"/>
-            <polygon points="155,60 180,10 125,35" fill="#C4B5FD"/>
+            <polygon points="155,60 180,10 125,35" fill="#7C3AED"/>
             <polygon points="150,55 168,25 130,40" fill="#F472B6"/>
             <!-- Body -->
-            <ellipse cx="100" cy="145" rx="55" ry="45" fill="#DDD6FE"/>
-            <ellipse cx="100" cy="155" rx="35" ry="28" fill="#EDE9FE"/>
+            <ellipse cx="100" cy="145" rx="55" ry="45" fill="#5B21B6"/>
+            <ellipse cx="100" cy="155" rx="35" ry="28" fill="#7C3AED"/>
             <!-- Head -->
-            <ellipse cx="100" cy="95" rx="65" ry="55" fill="#DDD6FE"/>
+            <ellipse cx="100" cy="95" rx="65" ry="55" fill="#5B21B6"/>
             <!-- Cheeks blush -->
-            <circle class="blush" cx="62" cy="112" r="10" fill="#F472B6" opacity="0.6"/>
-            <circle class="blush" cx="138" cy="112" r="10" fill="#F472B6" opacity="0.6"/>
+            <circle class="blush" cx="62" cy="112" r="10" fill="#F472B6" opacity="0.8"/>
+            <circle class="blush" cx="138" cy="112" r="10" fill="#F472B6" opacity="0.8"/>
             <!-- Eyes (Happy curved) -->
             <g class="eyes normal-eyes">
-              <circle cx="75" cy="92" r="7" fill="#3B0764"/>
+              <circle cx="75" cy="92" r="7" fill="#F3E8FF"/>
               <circle cx="77" cy="89" r="2.5" fill="#FFFFFF"/>
-              <circle cx="125" cy="92" r="7" fill="#3B0764"/>
+              <circle cx="125" cy="92" r="7" fill="#F3E8FF"/>
               <circle cx="127" cy="89" r="2.5" fill="#FFFFFF"/>
             </g>
             <g class="eyes happy-eyes" style="display:none;">
-              <path d="M 68 95 Q 75 85 82 95" stroke="#3B0764" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M 118 95 Q 125 85 132 95" stroke="#3B0764" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M 68 95 Q 75 83 82 95" stroke="#F3E8FF" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+              <path d="M 118 95 Q 125 83 132 95" stroke="#F3E8FF" stroke-width="4.5" fill="none" stroke-linecap="round"/>
             </g>
             <!-- Nose & Mouth -->
-            <polygon points="100,102 96,98 104,98" fill="#A855F7"/>
-            <path d="M 94 105 Q 100 112 100 105 Q 100 112 106 105" stroke="#3B0764" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <polygon points="100,102 96,98 104,98" fill="#D946EF"/>
+            <path d="M 94 105 Q 100 112 100 105 Q 100 112 106 105" stroke="#EDE9FE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
             <!-- Whiskers -->
-            <line x1="40" y1="98" x2="15" y2="92" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
-            <line x1="40" y1="106" x2="12" y2="108" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
-            <line x1="160" y1="98" x2="185" y2="92" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
-            <line x1="160" y1="106" x2="188" y2="108" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="40" y1="98" x2="15" y2="92" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"/>
+            <line x1="40" y1="106" x2="12" y2="108" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"/>
+            <line x1="160" y1="98" x2="185" y2="92" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"/>
+            <line x1="160" y1="106" x2="188" y2="108" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"/>
             <!-- Paws -->
-            <ellipse cx="80" cy="175" rx="14" ry="10" fill="#DDD6FE"/>
-            <ellipse cx="120" cy="175" rx="14" ry="10" fill="#DDD6FE"/>
-            <!-- Lavender Bowtie / Flower on head -->
-            <circle cx="140" cy="50" r="10" fill="#A855F7"/>
-            <circle cx="140" cy="50" r="4" fill="#FEF08A"/>
+            <ellipse cx="80" cy="175" rx="14" ry="10" fill="#6D28D9"/>
+            <ellipse cx="120" cy="175" rx="14" ry="10" fill="#6D28D9"/>
+            <!-- Purple Violet / Star on head -->
+            <circle cx="140" cy="50" r="10" fill="#C084FC"/>
+            <circle cx="140" cy="50" r="4" fill="#FDE047"/>
           </svg>
-          <div class="pet-prompt">👆 Click to pet me!</div>
+          <div class="pet-prompt">👆 Pet me, baby!</div>
         </div>
       </div>
     </header>
@@ -102,8 +110,8 @@
     <!-- HUGS & KISSES DISPENSER -->
     <section class="card-section love-dispenser-section">
       <div class="section-header">
-        <h2 class="section-title">💜 Hugs & Kisses Express 💋</h2>
-        <p class="section-desc">Whenever you're smiling, tired, or just need to feel loved—click away!</p>
+        <h2 class="section-title">💜 Hugs & Kisses For My Baby Bubb 💋</h2>
+        <p class="section-desc">Whenever my sweet boo boo is tired, smiling, or just needs endless love—click away!</p>
       </div>
 
       <div class="dispenser-grid">
@@ -111,11 +119,11 @@
         <div class="dispenser-card hug-card">
           <div class="dispenser-icon">🫂</div>
           <div class="dispenser-info">
-            <span class="counter-label">Mariyam's Warm Hugs</span>
+            <span class="counter-label">Baby Mariyam's Warm Hugs</span>
             <div class="counter-number" id="hug-counter">0</div>
           </div>
           <button id="send-hug-btn" class="action-btn hug-btn">
-            <span>Send Warm Hug</span>
+            <span>Hug My Baby 💜</span>
             <span class="btn-sparkle">✨</span>
           </button>
         </div>
@@ -124,11 +132,11 @@
         <div class="dispenser-card kiss-card">
           <div class="dispenser-icon">💋</div>
           <div class="dispenser-info">
-            <span class="counter-label">Mariyam's Sweet Kisses</span>
+            <span class="counter-label">Sweet Kisses For My Bubb</span>
             <div class="counter-number" id="kiss-counter">0</div>
           </div>
           <button id="send-kiss-btn" class="action-btn kiss-btn">
-            <span>Blow Sweet Kisses</span>
+            <span>Kiss My Boo Boo 💋</span>
             <span class="btn-sparkle">💖</span>
           </button>
         </div>
@@ -137,11 +145,11 @@
         <div class="dispenser-card combo-card">
           <div class="dispenser-icon">🐾</div>
           <div class="dispenser-info">
-            <span class="counter-label">Mega Love Cuddle Attack</span>
-            <div class="counter-status" id="combo-status">Ready to pamper Mariyam!</div>
+            <span class="counter-label">Mega Cuddle Attack</span>
+            <div class="counter-status" id="combo-status">Ready to pamper my baby bubb boo boo! 💜</div>
           </div>
           <button id="send-combo-btn" class="action-btn combo-btn">
-            <span>Shower Everything! 💜</span>
+            <span>Shower Everything on Bubb! ✨</span>
           </button>
         </div>
       </div>
@@ -150,37 +158,35 @@
     <!-- INTERACTIVE LOVE LETTER -->
     <section class="card-section letter-section">
       <div class="section-header">
-        <h2 class="section-title">💌 A Letter For Mariyam Fatima</h2>
-        <p class="section-desc">Click the sealed envelope to open the secret letter written just for you.</p>
+        <h2 class="section-title">💌 A Letter For My Baby Mariyam</h2>
+        <p class="section-desc">Tap the wax seal to open this secret letter written from my heart to my bubb.</p>
       </div>
 
       <div class="envelope-wrapper" id="envelope">
-        <div class="envelope-flap"></div>
-        <div class="envelope-pocket"></div>
         <div class="envelope-seal" id="envelope-seal">
           <span>💜</span>
-          <small>Open Me</small>
+          <small>Open For Baby</small>
         </div>
         
         <div class="letter-paper" id="letter-content">
           <div class="letter-header">
             <span class="letter-stamp">🐱💌</span>
-            <span class="letter-date">Always & Forever</span>
+            <span class="letter-date">To My Forever Girl • Always & Forever</span>
           </div>
-          <h3 class="letter-salutation">My Dearest Mariyam Fatima,</h3>
+          <h3 class="letter-salutation">My Dearest Mariyam Fatima (My Baby, My Bubb, My Boo Boo),</h3>
           <div class="letter-body">
             <p>
-              I made this little cozy corner of the internet exclusively for you, wrapped in your favorite shades of purple, sprinkled with little kittens, sweet pastries, and ice creams.
+              I made this dark purple glowing universe exclusively for you, baby. Wrapped in the deepest midnight violets you love, surrounded by little purring kittens, sweet pastries, and our song playing softly in the background.
             </p>
             <p>
-              Thank you for being the sweetest, most wonderful presence in my life. Your smile has a way of turning any ordinary day into pure magic, and your laugh is easily my favorite sound.
+              Thank you for being the sweetest, most breathtaking presence in my life, bubb. You're my safest haven, my baby girl, and my sweetest boo boo. Your smile turns any ordinary day into pure magic, and hearing you happy is easily my favorite feeling in the world.
             </p>
             <p>
-              Whenever you have a long day, whenever you need comfort, or whenever you just want to smile—remember how deeply you are adored, cherished, and treasured. You deserve all the softest hugs, endless sweet kisses, and every pastry in the world.
+              Just like the song says: <em>"You will be my girl, you will be my world."</em> Whenever you have a long day, whenever you need comfort, or whenever you just want to feel loved—remember that you are adored beyond words, baby. You deserve all the softest hugs, endless kisses, and every pastry and ice cream in the universe, my boo boo.
             </p>
             <p class="letter-signature">
-              With all my love & infinite purple hearts,<br>
-              <strong>Forever Yours 💜✨</strong>
+              With all my love & infinite purple stars,<br>
+              <strong>Forever Yours, Baby 💜✨</strong>
             </p>
           </div>
           <div class="letter-decorations">
@@ -195,62 +201,62 @@
       <div class="section-header">
         <div class="cafe-tag">🧁 Kitten Patisserie & Gelato 🍨</div>
         <h2 class="section-title">Mariyam's Sweet Treat Cafe</h2>
-        <p class="section-desc">Order your favorite pastries & ice creams! Each treat comes with a cute surprise message.</p>
+        <p class="section-desc">Order your favorite pastries & ice creams, bubb! Each treat is served with a sweet message for my baby.</p>
       </div>
 
       <div class="treats-grid">
         <!-- Treat 1 -->
-        <div class="treat-card" data-treat="Lavender Velvet Cupcake" data-message="Sweet, delicate, and frosted with all my love for Mariyam! 🧁💜">
+        <div class="treat-card" data-treat="Lavender Velvet Cupcake" data-message="Sweet, delicate, and frosted with all my love for my baby bubb! 🧁💜">
           <div class="treat-badge">Chef's Special</div>
           <div class="treat-emoji">🧁</div>
           <h4 class="treat-name">Lavender Velvet Cupcake</h4>
-          <p class="treat-desc">Infused with purple vanilla cream and topped with sugar hearts.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Infused with dark vanilla cream and topped with purple sugar hearts for baby.</p>
+          <button class="treat-order-btn">Serve My Baby 💜</button>
         </div>
 
         <!-- Treat 2 -->
-        <div class="treat-card" data-treat="Purple Berry Gelato Swirl" data-message="Cool, refreshing, and 100% as sweet as your gorgeous smile! 🍨✨">
+        <div class="treat-card" data-treat="Purple Berry Gelato Swirl" data-message="Cool, refreshing, and 100% as sweet as my boo boo's gorgeous smile! 🍨✨">
           <div class="treat-badge">Ice Cold</div>
           <div class="treat-emoji">🍨</div>
           <h4 class="treat-name">Purple Berry Gelato</h4>
-          <p class="treat-desc">Blackberry, blueberry, and purple lilac cream swirl.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Blackberry, blueberry, and dark lilac cream swirl for my bubb.</p>
+          <button class="treat-order-btn">Serve My Bubb 💜</button>
         </div>
 
         <!-- Treat 3 -->
-        <div class="treat-card" data-treat="Golden Butter Croissant" data-message="Warm and comforting, just like holding your hand on a chilly evening! 🥐💫">
+        <div class="treat-card" data-treat="Golden Butter Croissant" data-message="Warm and comforting, just like holding you close, my baby! 🥐💫">
           <div class="treat-badge">Freshly Baked</div>
           <div class="treat-emoji">🥐</div>
           <h4 class="treat-name">Golden Butter Croissant</h4>
-          <p class="treat-desc">Flaky, warm, and baked with kitten love and butter.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Flaky, warm, and baked with kitten love for my boo boo.</p>
+          <button class="treat-order-btn">Serve My Boo Boo 💜</button>
         </div>
 
         <!-- Treat 4 -->
-        <div class="treat-card" data-treat="Strawberry Shortcake Slice" data-message="The cutest slice of cake for the most precious person alive! 🍰🍓">
+        <div class="treat-card" data-treat="Strawberry Shortcake Slice" data-message="The cutest slice of cake for the most precious baby alive! 🍰🍓">
           <div class="treat-badge">Sweetest</div>
           <div class="treat-emoji">🍰</div>
           <h4 class="treat-name">Berry Love Shortcake</h4>
-          <p class="treat-desc">Soft sponge layers filled with fresh strawberries & whipped cream.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Soft sponge layers filled with fresh strawberries & whipped cream for bubb.</p>
+          <button class="treat-order-btn">Serve My Baby 💜</button>
         </div>
 
         <!-- Treat 5 -->
-        <div class="treat-card" data-treat="Taro Boba Milk Tea" data-message="Chewy, purple, and brings instant joy—just like you do for me! 🧋💜">
+        <div class="treat-card" data-treat="Taro Boba Milk Tea" data-message="Sweet purple taro boba for the sweetest baby in the universe! 🧋💜">
           <div class="treat-badge">Bestseller</div>
           <div class="treat-emoji">🧋</div>
           <h4 class="treat-name">Taro Cloud Boba Tea</h4>
-          <p class="treat-desc">Creamy purple taro milk tea with brown sugar pearls.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Creamy dark taro milk tea with brown sugar pearls for my boo boo.</p>
+          <button class="treat-order-btn">Serve My Boo Boo 💜</button>
         </div>
 
         <!-- Treat 6 -->
-        <div class="treat-card" data-treat="Pastel Macaron Tower" data-message="Delicate, colorful, and packed with sweet reasons why I adore you! 🍬✨">
+        <div class="treat-card" data-treat="Pastel Macaron Tower" data-message="Delicate, delicious, and packed with reasons why I adore you, bubb! 🍬✨">
           <div class="treat-badge">Crisp & Sweet</div>
           <div class="treat-emoji">🍡</div>
           <h4 class="treat-name">Violet Macaron Stack</h4>
-          <p class="treat-desc">Lavender honey, vanilla bean, and blackberry macarons.</p>
-          <button class="treat-order-btn">Serve Mariyam 💜</button>
+          <p class="treat-desc">Lavender honey, vanilla bean, and blackberry macarons for baby.</p>
+          <button class="treat-order-btn">Serve My Bubb 💜</button>
         </div>
       </div>
 
@@ -263,7 +269,7 @@
           <div class="served-plate">
             <span id="modal-treat-emoji" class="served-emoji">🧁</span>
           </div>
-          <h3 id="modal-treat-title">Treat Served!</h3>
+          <h3 id="modal-treat-title">Treat Served For Baby!</h3>
           <p id="modal-treat-text" class="served-text"></p>
           <div class="modal-action">
             <button class="cute-pill-btn primary" id="enjoy-treat-btn">Thank You, Kitty! 💜</button>
@@ -276,7 +282,7 @@
     <section class="card-section jar-section">
       <div class="section-header">
         <h2 class="section-title">🔮 Jar of 100 Sweet Reasons</h2>
-        <p class="section-desc">Every time you click, you'll pull out a little purple paper star with a heartfelt reason why Mariyam is loved!</p>
+        <p class="section-desc">Every time you click, you'll pull out a little purple paper star with a heartfelt reason why my baby bubb is so loved!</p>
       </div>
 
       <div class="jar-interactive-container">
@@ -287,7 +293,7 @@
               <span>⭐</span><span>✨</span><span>🌟</span><span>💜</span><span>⭐</span><span>✨</span>
             </div>
             <div class="jar-label">
-              <span>Mariyam's Jar</span>
+              <span>Baby Bubb's Jar</span>
               <small>Tap for Love Note</small>
             </div>
           </div>
@@ -297,13 +303,13 @@
           <div class="note-card" id="note-card">
             <div class="note-pin">📌</div>
             <div class="note-text" id="note-text">
-              "Click the magical purple jar to uncover a reason why Mariyam Fatima makes my world so beautiful..." 💜
+              "Click the magical purple jar to uncover a reason why Mariyam Fatima is my whole world, baby..." 💜
             </div>
             <div class="note-counter" id="note-counter">Reason #1 of ∞</div>
           </div>
 
           <button id="draw-reason-btn" class="cute-pill-btn primary big-btn">
-            <span>✨ Pull Another Note ✨</span>
+            <span>✨ Pull Another Note For Boo Boo ✨</span>
           </button>
         </div>
       </div>
@@ -313,12 +319,12 @@
     <section class="card-section kitten-playground-section">
       <div class="section-header">
         <h2 class="section-title">🐾 Mariyam's Little Kitten Sanctuary</h2>
-        <p class="section-desc">Meet the kittens! Hover or tap on each kitten to see their reaction.</p>
+        <p class="section-desc">Meet the kittens! Hover or tap on each kitten to see how much they adore baby bubb boo boo.</p>
       </div>
 
       <div class="kittens-row">
         <!-- Kitten 1 -->
-        <div class="play-kitten-card" data-name="Mochi" data-reaction="Mochi rubs against your arm and purrs loudly!">
+        <div class="play-kitten-card" data-name="Mochi" data-reaction="Mochi rubs against your arm and purrs: 'I love you so much baby Mariyam!' 💜">
           <div class="kitten-avatar">
             <span class="avatar-emoji">🐱</span>
             <span class="floating-heart">💜</span>
@@ -331,7 +337,7 @@
         </div>
 
         <!-- Kitten 2 -->
-        <div class="play-kitten-card" data-name="Boba" data-reaction="Boba does a tiny backflip and offers you an ice cream!">
+        <div class="play-kitten-card" data-name="Boba" data-reaction="Boba does a tiny backflip and offers an ice cream: 'For the cutest bubb!' 🍦">
           <div class="kitten-avatar">
             <span class="avatar-emoji">😸</span>
             <span class="floating-heart">🍦</span>
@@ -344,7 +350,7 @@
         </div>
 
         <!-- Kitten 3 -->
-        <div class="play-kitten-card" data-name="Lavender" data-reaction="Lavender snuggles under your blanket and falls asleep on your lap!">
+        <div class="play-kitten-card" data-name="Lavender" data-reaction="Lavender snuggles under your blanket: 'Sleepy cuddle time with boo boo!' ✨">
           <div class="kitten-avatar">
             <span class="avatar-emoji">😻</span>
             <span class="floating-heart">✨</span>
@@ -357,7 +363,7 @@
         </div>
 
         <!-- Kitten 4 -->
-        <div class="play-kitten-card" data-name="Cupcake" data-reaction="Cupcake brings you a tiny bouquet of purple violets!">
+        <div class="play-kitten-card" data-name="Cupcake" data-reaction="Cupcake brings a bouquet of dark purple violets: 'Only for my baby!' 🌸">
           <div class="kitten-avatar">
             <span class="avatar-emoji">😽</span>
             <span class="floating-heart">🌸</span>
@@ -372,50 +378,7 @@
 
       <div class="kitten-reaction-box" id="kitten-reaction-box">
         <span class="box-icon">💌</span>
-        <span id="kitten-reaction-text">Click on any little kitten above to give them love!</span>
-      </div>
-    </section>
-
-    <!-- CUTE POLAROID MEMORY CORNER -->
-    <section class="card-section polaroid-section">
-      <div class="section-header">
-        <h2 class="section-title">📸 Picture Perfect Moments</h2>
-        <p class="section-desc">A little purple scrapbook made with sweet memories and adoration.</p>
-      </div>
-
-      <div class="polaroid-gallery">
-        <div class="polaroid-item tilt-left">
-          <div class="polaroid-tape"></div>
-          <div class="polaroid-img-wrapper purple-gradient-1">
-            <div class="polaroid-art">
-              <span class="art-icon">👑</span>
-              <span class="art-text">The Queen Herself</span>
-            </div>
-          </div>
-          <p class="polaroid-caption">Mariyam Fatima ✨</p>
-        </div>
-
-        <div class="polaroid-item tilt-right">
-          <div class="polaroid-tape"></div>
-          <div class="polaroid-img-wrapper purple-gradient-2">
-            <div class="polaroid-art">
-              <span class="art-icon">🍧</span>
-              <span class="art-text">Pastry & Ice Cream Date</span>
-            </div>
-          </div>
-          <p class="polaroid-caption">Infinite Sweet Dates 🍦</p>
-        </div>
-
-        <div class="polaroid-item tilt-straight">
-          <div class="polaroid-tape"></div>
-          <div class="polaroid-img-wrapper purple-gradient-3">
-            <div class="polaroid-art">
-              <span class="art-icon">💜</span>
-              <span class="art-text">Forever & Always</span>
-            </div>
-          </div>
-          <p class="polaroid-caption">All My Love, Today & Everyday 🐱</p>
-        </div>
+        <span id="kitten-reaction-text">Click on any little kitten above to give them love, bubb!</span>
       </div>
     </section>
 
@@ -423,10 +386,10 @@
     <footer class="page-footer">
       <div class="footer-paws">🐾 💜 🐾 💜 🐾</div>
       <p class="footer-msg">
-        Crafted with endless love, warm cuddles & purple sprinkles for <strong>Mariyam Fatima</strong>
+        Crafted with endless love, warm cuddles & purple stardust for <strong>Mariyam Fatima</strong>
       </p>
       <div class="footer-sub">
-        You are loved today, tomorrow, and forever and ever! 💜
+        You will always be my girl, my world, my baby, my bubb, and my boo boo! 💜
       </div>
     </footer>
 
