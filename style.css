@@ -392,6 +392,232 @@ body.dark-purple-theme {
 }
 
 /* =================================================================
+   THE DAY WE FIRST MET MILESTONE
+   ================================================================= */
+.milestone-section {
+  background: radial-gradient(circle at 50% 0%, rgba(68, 15, 128, 0.45) 0%, rgba(24, 7, 46, 0.9) 70%);
+  border: 1.8px solid rgba(216, 180, 254, 0.38);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(168, 85, 247, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-glow-orb {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(192, 132, 252, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(25px);
+}
+
+.milestone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(147, 51, 234, 0.35);
+  border: 1px solid var(--purple-neon);
+  padding: 5px 18px;
+  border-radius: 9999px;
+  font-size: clamp(0.78rem, 3vw, 0.88rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
+}
+
+.milestone-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+/* Date Hero Badge */
+.date-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(46, 12, 90, 0.85) 0%, rgba(20, 5, 42, 0.92) 100%);
+  border: 2px solid var(--purple-neon);
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55), 0 0 25px rgba(168, 85, 247, 0.35);
+  width: 100%;
+  max-width: 580px;
+  transition: transform 0.25s ease;
+}
+
+.date-hero-badge:hover {
+  transform: scale(1.02);
+}
+
+.date-icon {
+  font-size: clamp(2.6rem, 7vw, 3.6rem);
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.6));
+  flex-shrink: 0;
+}
+
+.date-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-day-name {
+  font-family: var(--font-main);
+  font-size: clamp(0.8rem, 2.6vw, 0.95rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--magenta-glow);
+  margin-bottom: 2px;
+}
+
+.date-main-text {
+  font-family: var(--font-main);
+  font-size: clamp(1.4rem, 5.2vw, 2.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.7);
+}
+
+.date-tagline {
+  font-size: clamp(0.82rem, 2.8vw, 0.92rem);
+  color: var(--purple-light);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* Live Love Timer Grid */
+.live-counter-container {
+  background: rgba(18, 4, 38, 0.85);
+  border: 1.5px solid rgba(192, 132, 252, 0.35);
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.counter-header-tag {
+  font-family: var(--font-main);
+  font-size: clamp(0.82rem, 3vw, 0.95rem);
+  font-weight: 700;
+  color: var(--purple-neon);
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.love-timer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 14px);
+}
+
+.timer-box {
+  background: linear-gradient(145deg, #2b0b57, #190535);
+  border: 1.5px solid rgba(192, 132, 252, 0.4);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: clamp(55px, 16vw, 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+.timer-number {
+  font-family: var(--font-main);
+  font-size: clamp(1.4rem, 5.2vw, 2.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  text-shadow: 0 0 15px rgba(232, 121, 249, 0.7);
+}
+
+.timer-unit {
+  font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+  color: var(--purple-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-top: 2px;
+}
+
+.timer-divider {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--purple-neon);
+  line-height: 1;
+  margin-bottom: 8px;
+  animation: heartThump 1s infinite alternate;
+}
+
+/* Milestone Romantic Message Card */
+.milestone-message-card {
+  background: linear-gradient(150deg, #1c0638 0%, #110224 100%);
+  border: 1.5px solid rgba(192, 132, 252, 0.35);
+  border-radius: 20px;
+  padding: 2.2rem 2rem;
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.milestone-quote-mark {
+  font-family: var(--font-hand);
+  font-size: 5rem;
+  line-height: 0.8;
+  color: rgba(192, 132, 252, 0.25);
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  pointer-events: none;
+}
+
+.milestone-quote {
+  font-size: clamp(1rem, 3.6vw, 1.15rem);
+  color: var(--purple-light);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.milestone-quote strong {
+  color: var(--white);
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.4);
+}
+
+.milestone-quote.highlight-sub {
+  color: var(--purple-soft);
+  font-style: italic;
+  font-size: clamp(1.05rem, 3.8vw, 1.22rem);
+  margin-bottom: 1.5rem;
+}
+
+.milestone-signature {
+  font-family: var(--font-hand);
+  font-size: clamp(1.4rem, 4.8vw, 1.85rem);
+  color: var(--magenta-glow);
+  text-align: right;
+  text-shadow: 0 0 12px rgba(232, 121, 249, 0.5);
+}
+
+.milestone-action-bar {
+  text-align: center;
+}
+
+/* =================================================================
    HUGS & KISSES DISPENSER
    ================================================================= */
 .dispenser-grid {
@@ -1340,5 +1566,20 @@ body.dark-purple-theme {
 
   .letter-decorations {
     gap: 0.85rem;
+  }
+
+  .date-hero-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .live-counter-container {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .milestone-message-card {
+    padding: 1.75rem 1.25rem;
   }
 }

@@ -266,6 +266,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ===============================================================
+  // 2.5 THE DAY WE FIRST MET (24TH NOVEMBER 2026) LIVE COUNTER
+  // ===============================================================
+  const firstMetDate = new Date(2026, 10, 24, 0, 0, 0); // Tuesday, 24th November 2026
+
+  function updateLoveTimer() {
+    const now = new Date();
+    const diff = Math.max(0, now - firstMetDate);
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    const daysEl = document.getElementById('met-days');
+    const hoursEl = document.getElementById('met-hours');
+    const minsEl = document.getElementById('met-mins');
+    const secsEl = document.getElementById('met-secs');
+
+    if (daysEl) daysEl.textContent = days;
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+    if (secsEl) secsEl.textContent = String(secs).padStart(2, '0');
+  }
+
+  updateLoveTimer();
+  setInterval(updateLoveTimer, 1000);
+
+  // Celebrate 24th November Button
+  const reliveBtn = document.getElementById('relive-magic-btn');
+  if (reliveBtn) {
+    reliveBtn.addEventListener('click', (e) => {
+      playSparkleSound();
+      
+      const originalText = reliveBtn.innerHTML;
+      reliveBtn.innerHTML = '<span>🔒 Locked In My Heart Forever, Baby! 💜</span>';
+      setTimeout(() => {
+        reliveBtn.innerHTML = originalText;
+      }, 3000);
+
+      // Burst of milestone love tokens
+      const rect = reliveBtn.getBoundingClientRect();
+      const milestoneTokens = ['🗓️', '💜', '✨', '🍂', '💖', '24', '🥰', '🐾', '👑'];
+      for (let i = 0; i < 22; i++) {
+        setTimeout(() => {
+          const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 200;
+          const y = rect.top + (Math.random() - 0.5) * 60;
+          const token = milestoneTokens[Math.floor(Math.random() * milestoneTokens.length)];
+          spawnFloatingItem(token, x, y);
+        }, i * 45);
+      }
+    });
+  }
+
+
+  // ===============================================================
   // 3. HUGS & KISSES DISPENSER
   // ===============================================================
   let hugsCount = parseInt(localStorage.getItem('mariyam_hugs') || '150');
