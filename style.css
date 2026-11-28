@@ -889,6 +889,290 @@ body.dark-purple-theme {
 }
 
 /* =================================================================
+   MY FAV SNAPS OF YOU SECTION & LIGHTBOX
+   ================================================================= */
+.fav-snaps-section {
+  position: relative;
+  overflow: visible;
+}
+
+.snaps-tag {
+  display: inline-block;
+  background: rgba(147, 51, 234, 0.35);
+  border: 1px solid var(--purple-neon);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fav-snaps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  padding-top: 1rem;
+}
+
+.snap-card {
+  background: linear-gradient(150deg, rgba(38, 10, 74, 0.85) 0%, rgba(18, 4, 38, 0.95) 100%);
+  border: 1.5px solid rgba(192, 132, 252, 0.35);
+  border-radius: 20px;
+  padding: 14px 14px 18px 14px;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.15);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.snap-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--purple-neon);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.snap-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 20px;
+  background: rgba(192, 132, 252, 0.65);
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(4px);
+  border-radius: 3px;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.snap-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #110224;
+}
+
+.snap-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.snap-card:hover .snap-img {
+  transform: scale(1.06);
+}
+
+.snap-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px 10px 10px;
+  background: linear-gradient(to top, rgba(14, 2, 28, 0.85) 0%, transparent 100%);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.snap-card:hover .snap-overlay,
+.snap-img-container:active .snap-overlay {
+  opacity: 1;
+}
+
+.overlay-icon {
+  background: rgba(42, 10, 86, 0.85);
+  border: 1px solid var(--purple-neon);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.snap-like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(22, 5, 44, 0.82);
+  border: 1.5px solid rgba(192, 132, 252, 0.5);
+  color: var(--white);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.snap-like-btn:hover {
+  transform: scale(1.18);
+  border-color: var(--magenta-glow);
+  background: rgba(147, 51, 234, 0.85);
+  box-shadow: 0 0 16px rgba(232, 121, 249, 0.6);
+}
+
+.snap-like-btn:active {
+  transform: scale(0.9);
+}
+
+.snap-meta {
+  padding-top: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.snap-title {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 4px;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+}
+
+.snap-caption {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--purple-light);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.snap-date-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--magenta-glow);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Lightbox Modal */
+.snap-lightbox.hidden {
+  display: none;
+}
+
+.snap-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 1, 12, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.lightbox-content {
+  position: relative;
+  background: linear-gradient(150deg, #240949 0%, #110224 100%);
+  border: 2px solid var(--purple-neon);
+  border-radius: 26px;
+  padding: 1.5rem;
+  max-width: 480px;
+  width: min(480px, 94vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(168, 85, 247, 0.45);
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  color: var(--purple-light);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  z-index: 10;
+}
+
+.lightbox-close-btn:hover {
+  color: var(--white);
+}
+
+.lightbox-img-wrapper {
+  width: 100%;
+  max-height: min(440px, 55vh);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(192, 132, 252, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.1rem;
+}
+
+.lightbox-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  max-height: min(440px, 55vh);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.lightbox-info h3 {
+  font-family: var(--font-main);
+  font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  color: var(--white);
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
+}
+
+.lightbox-info p {
+  font-family: var(--font-hand);
+  font-size: clamp(1.2rem, 4vw, 1.45rem);
+  color: var(--purple-light);
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+
+/* =================================================================
    CAFE & ICE CREAM PARLOUR
    ================================================================= */
 .cafe-tag {
@@ -1527,6 +1811,11 @@ body.dark-purple-theme {
   .avatar-emoji {
     font-size: 2.3rem;
   }
+
+  .fav-snaps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 /* Ultra-compact screens (under 420px: iPhone SE, Galaxy S, etc.) */
@@ -1539,6 +1828,11 @@ body.dark-purple-theme {
   .card-section {
     padding: 1.75rem 1rem;
     border-radius: 18px;
+  }
+
+  .fav-snaps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .dispenser-grid {

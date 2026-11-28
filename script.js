@@ -421,6 +421,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ===============================================================
+  // 4.5 MY FAV SNAPS OF YOU: LIGHTBOX & PHOTO INTERACTIONS
+  // ===============================================================
+  const snapLightbox = document.getElementById('snap-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeLightboxBtn = document.getElementById('close-lightbox-btn');
+  const lightboxHeartBtn = document.getElementById('lightbox-heart-btn');
+
+  // Open Lightbox on card image click
+  document.querySelectorAll('.snap-card').forEach(card => {
+    const imgContainer = card.querySelector('.snap-img-container');
+    const img = card.querySelector('.snap-img');
+    const title = card.dataset.title;
+    const caption = card.dataset.caption;
+    const likeBtn = card.querySelector('.snap-like-btn');
+
+    if (imgContainer) {
+      imgContainer.addEventListener('click', (e) => {
+        if (e.target === likeBtn) return;
+        playSparkleSound();
+        lightboxImg.src = img.src;
+        lightboxTitle.textContent = title;
+        lightboxCaption.textContent = `"${caption}" 💜`;
+        snapLightbox.classList.remove('hidden');
+
+        // Spawn hearts on open
+        const rect = imgContainer.getBoundingClientRect();
+        for (let i = 0; i < 6; i++) {
+          spawnFloatingItem('💜', rect.left + rect.width / 2, rect.top + 50);
+        }
+      });
+    }
+
+    // Like button on card
+    if (likeBtn) {
+      likeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playPopSound();
+        likeBtn.textContent = '💖';
+        likeBtn.style.transform = 'scale(1.3) rotate(15deg)';
+        setTimeout(() => {
+          likeBtn.style.transform = '';
+        }, 300);
+
+        const rect = likeBtn.getBoundingClientRect();
+        const likeTokens = ['💖', '💜', '✨', '👑', '🌸'];
+        for (let i = 0; i < 5; i++) {
+          const sym = likeTokens[Math.floor(Math.random() * likeTokens.length)];
+          spawnFloatingItem(sym, rect.left + 15, rect.top);
+        }
+      });
+    }
+  });
+
+  // Close Lightbox
+  const closeSnapModal = () => {
+    playPopSound();
+    snapLightbox.classList.add('hidden');
+  };
+
+  if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeSnapModal);
+  if (snapLightbox) {
+    const backdrop = snapLightbox.querySelector('.lightbox-backdrop');
+    if (backdrop) backdrop.addEventListener('click', closeSnapModal);
+  }
+
+  // Lightbox 10 Kisses Button
+  if (lightboxHeartBtn) {
+    lightboxHeartBtn.addEventListener('click', () => {
+      playSparkleSound();
+      kissesCount += 10;
+      localStorage.setItem('mariyam_kisses', kissesCount);
+      if (kissCounterEl) kissCounterEl.textContent = kissesCount.toLocaleString();
+
+      lightboxHeartBtn.textContent = 'Sent 10 Sweet Kisses to Bubb! 💋💜';
+      setTimeout(() => {
+        lightboxHeartBtn.textContent = 'Send 10 Kisses To This Picture 💋';
+      }, 2500);
+
+      // Burst of kisses across screen
+      const rect = lightboxHeartBtn.getBoundingClientRect();
+      const kissItems = ['💋', '💖', '💜', '✨', '😘'];
+      for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+          const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 160;
+          const y = rect.top + (Math.random() - 0.5) * 40;
+          const sym = kissItems[Math.floor(Math.random() * kissItems.length)];
+          spawnFloatingItem(sym, x, y);
+        }, i * 60);
+      }
+    });
+  }
+
+
+  // ===============================================================
   // 5. MARIYAM'S SWEET CAFE & ICE CREAM PARLOUR
   // ===============================================================
   const treatModal = document.getElementById('treat-modal');
